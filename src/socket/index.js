@@ -2,11 +2,18 @@ import { Server } from "socket.io";
 
 let io;
 
+// Fallback-safe allowed origins (VERY IMPORTANT)
+const allowedOrigins = [
+  "http://localhost:5173",
+  "http://localhost:5174",
+  "https://scootwise-frontend.vercel.app",
+];
+
 export const initSocket = (server) => {
   io = new Server(server, {
     cors: {
-      origin: process.env.CLIENT_URL,
-      methods: ["GET", "POST"],
+      origin: allowedOrigins,
+      methods: ["GET", "POST", "PUT", "DELETE"],
       credentials: true,
     },
   });
@@ -14,9 +21,16 @@ export const initSocket = (server) => {
   io.on("connection", (socket) => {
     console.log("🟢 Client connected:", socket.id);
 
-    // Optional: join rooms (for rides later)
+    // Join ride room (for real-time tracking)
     socket.on("join:ride", (rideId) => {
       socket.join(rideId);
+      console.log(`🚴 Joined ride room: ${rideId}`);
+    });
+
+    // Leave ride room (optional but good practice)
+    socket.on("leave:ride", (rideId) => {
+      socket.leave(rideId);
+      console.log(`🚴 Left ride room: ${rideId}`);
     });
 
     socket.on("disconnect", () => {

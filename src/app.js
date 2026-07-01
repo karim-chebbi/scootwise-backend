@@ -11,9 +11,14 @@ import maintenanceRoutes from "./routes/maintenance.routes.js";
 const app = express();
 
 // Middlewares
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://scootwise-frontend.vercel.app",
+];
+
 app.use(
   cors({
-    origin: process.env.CLIENT_URL,
+    origin: allowedOrigins,
     credentials: true,
   }),
 );
