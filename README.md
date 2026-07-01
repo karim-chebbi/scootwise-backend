@@ -1,14 +1,14 @@
-📦 ScootWise Backend API
+# 📦 ScootWise Backend API
 
-Smart Electric Scooter Fleet Management System
-Built with Node.js, Express, MongoDB, Socket.IO
+### Smart Electric Scooter Fleet Management System
+### Built with Node.js, Express, MongoDB, Socket.IO
 
-🚀 Overview
+## 🚀 Overview
 
 ScootWise Backend is a RESTful API + real-time server that powers a smart scooter fleet management platform.
 It handles authentication, scooter management, ride lifecycle, maintenance reporting, and real-time updates using WebSockets.
 
-🧠 Tech Stack
+## 🧠 Tech Stack
 
 Node.js
 Express.js
@@ -19,13 +19,14 @@ bcrypt (Password hashing)
 dotenv (Environment variables)
 cors, helmet, morgan (Security & logging)
 
-⚙️ Features
-🔐 Authentication
+## ⚙️ Features
+
+## 🔐 Authentication
 
 JWT-based login/register
 Role-based access control (Rider / Admin)
 
-🛴 Scooter Management
+## 🛴 Scooter Management
 
 Create / update / delete scooters
 Track scooter status:
@@ -34,28 +35,28 @@ IN_RIDE
 MAINTENANCE
 Update scooter location in real-time
 
-🚴 Ride System
+## 🚴 Ride System
 
 Start ride
 End ride
 Automatic cost calculation based on duration
 Ride history tracking
 
-🔧 Maintenance System
+## 🔧 Maintenance System
 
 Report scooter issues
 Admin view of maintenance reports
 Resolve maintenance and restore scooter availability
 
-⚡ Real-Time System (Socket.IO)
+## ⚡ Real-Time System (Socket.IO)
 
 Live scooter location updates
 Ride started / ended events
 Scooter status updates
 Battery updates (simulation ready)
 
-📁 Project Structure
-
+## 📁 Project Structure
+```
 scootwise-backend/
 │
 ├── src/
@@ -100,10 +101,11 @@ scootwise-backend/
 ├── .env
 ├── package.json
 └── README.md
+```
 
+## 🔌 API Endpoints
 
-🔌 API Endpoints
-
+```
 Auth
 POST /api/auth/register
 POST /api/auth/login
@@ -119,8 +121,9 @@ Maintenance
 POST   /api/maintenance
 GET    /api/maintenance     (Admin only)
 PUT    /api/maintenance/resolve/:id
+```
 
-⚡ Socket.IO Events
+## ⚡ Socket.IO Events
 
 Client → Server (optional)
 test:event
@@ -131,7 +134,7 @@ scooter:locationUpdated
 scooter:statusUpdated
 scooter:batteryUpdated
 
-🧪 Environment Variables
+## 🧪 Environment Variables
 
 Create a .env file:
 
@@ -139,7 +142,7 @@ PORT=5000
 MONGO_URI=mongodb://localhost:27017/scootwise
 JWT_SECRET=your_secret_key
 
-🚀 Installation & Setup
+## 🚀 Installation & Setup
 
 1. Clone repo
 git clone https://github.com/karim-chebbi/scootwise-backend.git
@@ -162,23 +165,29 @@ Middleware ensures authentication & role control
 
 This separation ensures scalability, maintainability, and production readiness.
 
-🔒 Security Features
+## 🔒 Security Features
+
 JWT authentication
 Role-based route protection
 Password hashing with bcrypt
 CORS protection
 Helmet security headers
-📈 Future Improvements
+
+## 📈 Future Improvements
+
 Redis caching for real-time data
 Live GPS simulation engine
 Payment integration (Stripe simulation)
 Admin analytics dashboard APIs
 AI-based predictive maintenance
-👨‍💻 Author
 
-Karim Chebbi
-Full-Stack Developer & Instructor (GoMyCode)
+## 👨‍💻 Author
 
-🏁 Conclusion
+### Karim Chebbi
 
-This backend is a production-ready foundation for a smart mobility SaaS platform, combining REST APIs and real-time communication for scalable scooter fleet management.
+### Full-Stack Developer & Instructor (GoMyCode)
+
+## 🏁 Conclusion
+
+
+### This backend is a production-ready foundation for a smart mobility SaaS platform, combining REST APIs and real-time communication for scalable scooter fleet management.
