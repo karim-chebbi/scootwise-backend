@@ -13,10 +13,7 @@ const app = express();
 // Middlewares
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://scootwise-frontend-1ysnkc9gh-karims-projects-9029cce5.vercel.app/login",
-    ],
+    origin: process.env.CLIENT_URL,
     credentials: true,
   }),
 );
