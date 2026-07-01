@@ -142,7 +142,7 @@ JWT_SECRET=your_secret_key
 🚀 Installation & Setup
 
 1. Clone repo
-git clone https://github.com/your-repo/scootwise-backend.git
+git clone https://github.com/karim-chebbi/scootwise-backend.git
 2. Install dependencies
 npm install
 3. Run development server
