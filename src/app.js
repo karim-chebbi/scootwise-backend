@@ -11,7 +11,15 @@ import maintenanceRoutes from "./routes/maintenance.routes.js";
 const app = express();
 
 // Middlewares
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://scootwise-frontend-1ysnkc9gh-karims-projects-9029cce5.vercel.app/login",
+    ],
+    credentials: true,
+  }),
+);
 app.use(helmet());
 app.use(express.json());
 app.use(morgan("dev"));
